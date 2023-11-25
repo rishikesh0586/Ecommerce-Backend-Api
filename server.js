@@ -3,7 +3,7 @@ const app = require("./app");
 const dotenv = require("dotenv");
 const cloudinary = require("cloudinary");
 const connectDatabase = require("./config/database");
-
+dotenv.config({path:'config.env'});
 //handling uncaught exception
 process.on("uncaughtException",(err)=>{
 	console.log(`error:${err.message}`);
@@ -12,7 +12,7 @@ process.on("uncaughtException",(err)=>{
 });
 
 //config
-dotenv.config({path:"/config/config.env"});
+//dotenv.config({path:"/config/config.env"});
 
 //CONNECT to database
 connectDatabase();   
