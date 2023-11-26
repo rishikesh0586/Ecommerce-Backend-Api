@@ -9,11 +9,14 @@ const fileUpload = require("express-fileupload");
 
 const errorMiddleware = require("./middleware/error");
 const dotenv =require("dotenv");
+const cors = require("cors");
+
 
 //config
 //dotenv.config({path:"/config/config.env"});
 
 const app= express();
+app.use(cors());
 app.use(express.json());
 
 
