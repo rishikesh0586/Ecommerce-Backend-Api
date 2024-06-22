@@ -3,11 +3,11 @@ const app = require("./app");
 const dotenv = require("dotenv");
 const cloudinary = require("cloudinary");
 const connectDatabase = require("./config/database");
-dotenv.config({path:'config.env'});
+dotenv.config({path:'.env'});
 //handling uncaught exception
 process.on("uncaughtException",(err)=>{
 	console.log(`error:${err.message}`);
-	console.log(`server is dowwn due to unhandled uncaught promise`);
+	console.log(`server is dowwn `);
 	process.exit(1);
 });
 
@@ -29,7 +29,7 @@ app.listen(process.env.PORT,()=>{
 	//unhandle promise error
 	process.on("unhandledRejection",(err)=>{
 		console.log(`Error:${err.message}`);
-		console.log(`server is shut down due to unhandle promise Rejection`);
+		console.log(`server is shut down `);
 		server.close(()=>{
 			process.exit(1);
 		});

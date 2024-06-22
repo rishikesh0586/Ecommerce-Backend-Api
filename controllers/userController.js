@@ -52,8 +52,15 @@ exports.loginUser = catchAsyncErrors(async (req, res, next) => {
   if (!isPasswordMatched) {
     return next(new ErrorHander("Invalid email or password", 401));
   }
+  res.cookie("myCookie", "cookieValue", {
+    maxAge: 24 * 60 * 60 * 1000, // 1 day
+  httpOnly: true,
+  });
 
-  sendToken(user, 200, res);
+sendToken(user, 200, res);
+
+
+  
 });
 
 // Logout User
