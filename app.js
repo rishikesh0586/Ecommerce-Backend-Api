@@ -17,7 +17,7 @@ const cors = require("cors");
 
 const app= express();
 app.use(cors({
-    origin: 'http://localhost:3000', // Replace with your frontend URL
+    origin: 'https://667c820cfab9d00790b7b620--nimble-strudel-0ad192.netlify.app', // Replace with your frontend URL
     credentials: true, // Allow cookies to be sent
   }));
 app.use(express.json());
