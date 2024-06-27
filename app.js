@@ -17,7 +17,7 @@ const cors = require("cors");
 
 const app= express();
 app.use(cors({
-    origin: 'https://aquamarine-melba-ef5820.netlify.app/', // Replace with your frontend URL
+    origin: 'https://aquamarine-melba-ef5820.netlify.app', // Replace with your frontend URL
     credentials: true, // Allow cookies to be sent
   }));
 app.use(express.json());
