@@ -14,10 +14,11 @@ const cors = require("cors");
 
 //config
 //dotenv.config({path:"/config/config.env"});
+const allowedOrigins = ['https://aquamarine-melba-ef5820.netlify.app', 'http://localhost:3000', 'https://origin3.com'];
 
 const app= express();
 app.use(cors({
-    origin: "*", // Replace with your frontend URL
+    origin: allowedOrigins, // Replace with your frontend URL
     credentials: true, // Allow cookies to be sent
   }));
 app.use(express.json());
